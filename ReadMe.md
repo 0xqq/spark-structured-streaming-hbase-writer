@@ -2,6 +2,8 @@
 
 #### for example :  
 
+ - run ```nc -lk 9999```
+
  - Create spark Session :  
  ```
  val spark = SparkSession
@@ -11,9 +13,8 @@
  .getOrCreate()
  ```
     
- - run ```nc -lk 9999```
-  
  - read stream 
+ 
 ```
  val lines = spark.readStream
        .format("socket")
@@ -52,6 +53,8 @@
      query.awaitTermination()
      
 ``` 
+
+- send messages using nc and check your hbase
 
 - To run the test
 
