@@ -1,5 +1,4 @@
-package com.akam.sssc.hbase
-
+package com.github.mohamedaabdelaziz.sssc.hbase
 
 import java.util.concurrent.ExecutorService
 

@@ -3,13 +3,13 @@ import scala.sys.process._
 lazy val commonSettings = Seq(
   name := "spark-structured-streaming-hbase-writer",
   version := "0.1",
-  organization := "com.akam",
+  organization := "com.github.mohamedaabdelaziz",
   scalaVersion := "2.11.8",
   homepage := Some(url("https://github.com/mohamed-a-abdelaziz/spark-structured-streaming-hbase-writer")),
   scmInfo := Some(ScmInfo(url("https://github.com/mohamed-a-abdelaziz/spark-structured-streaming-hbase-writer"),
     "git@github.com:mohamed-a-abdelaziz/spark-structured-streaming-hbase-writer.git")),
-  developers := List(Developer("mohamed-a-abdelaziz",
-    "mohamed-a-abdelaziz",
+  developers := List(Developer("mohamedaabdelaziz",
+    "mohamedaabdelaziz",
     "mohamed.abduelaziz@gmail.com",
     url("https://github.com/mohamed-a-abdelaziz"))),
   publishMavenStyle := true,
@@ -36,4 +36,5 @@ val startDockers = TaskKey[Unit]("start-dockers", "Start docker instances")
 lazy val root = (project in file("."))
   .settings(commonSettings)
   .settings(libraryDependencies ++= dependencies)
+  .settings(test in Test := (test in Test).dependsOn(startDockers in Test).value)
   .settings(test in assembly := (test in assembly).dependsOn(startDockers in Test).value)
