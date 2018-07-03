@@ -6,3 +6,4 @@
 *.class
 *.cache
 /.idea/*
+/project/target/*
