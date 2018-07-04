@@ -2,7 +2,7 @@ import scala.sys.process._
 
 lazy val commonSettings = Seq(
   name := "spark-structured-streaming-hbase-writer",
-  version := "0.1",
+  version := "1.0",
   organization := "com.github.mohamed-a-abdelaziz",
   scalaVersion := "2.11.8",
   homepage := Some(url("https://github.com/mohamed-a-abdelaziz/spark-structured-streaming-hbase-writer")),
